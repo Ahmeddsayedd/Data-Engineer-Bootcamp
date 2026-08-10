@@ -46,6 +46,19 @@ More specifically:
 
 ---
 
+## Database Access
+
+This project uses the `data_jobs` database in DuckDB/MotherDuck.
+
+Attach the database using the command for your region:
+
+```sql
+ATTACH 'md:_share/data_jobs/87603155-cdc7-4c80-85ad-3a6b0d760d93' AS data_jobs;
+```
+Use the appropriate database ID for your region (us-east-1, us-west-2, eu-west-1, ap-northeast-1, or ap-southeast-2).
+
+---
+
 ## 🧩 Business Questions
 
 ### 01 — Most In-Demand Skills
