@@ -40,3 +40,32 @@ SELECT '=== Loading skills_job_dim Table ===' AS info;
 INSERT INTO skills_job_dim (skill_id, job_id)
 SELECT skill_id, job_id
 FROM read_csv_auto('https://storage.googleapis.com/sql_de/skills_job_dim.csv');
+
+
+
+
+
+-- Verify data was loaded correctly
+SELECT 'company_dim' AS Table_Name, count(*) AS Record_Count FROM company_dim
+UNION ALL
+SELECT 'skills_dim', count(*) FROM skills_dim
+UNION ALL
+SELECT 'job_postings_fact', count(*) FROM job_postings_fact
+UNION ALL
+SELECT 'skills_job_dim', count(*) FROM skills_job_dim;
+
+
+
+-- Show sample data
+SELECT '=== Company Dimension Sample ===' AS info;
+SELECT * FROM company_dim LIMIT 5;
+
+SELECT '=== Skills Dimension Sample ===' AS info;
+SELECT * FROM skills_dim LIMIT 5;
+
+SELECT '=== Job Postings Fact Sample ===' AS info;
+SELECT * FROM job_postings_fact LIMIT 5;
+
+SELECT '=== Skills Job Bridge Sample ===' AS info;
+SELECT * FROM skills_job_dim LIMIT 5;
+
