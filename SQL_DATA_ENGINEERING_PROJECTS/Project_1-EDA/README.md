@@ -1,5 +1,5 @@
 # Hungarian Data Engineering Job Market Analysis
-![alt text](image.png)
+![alt text](Resources/image.png)
 A SQL project analyzing the **Data Engineering job market in Hungary** using real-world job posting data.
 
 The goal of this project is to understand what Hungarian employers are looking for when hiring Data Engineers, which skills are associated with higher salaries, and which skills provide the best combination of **job demand and earning potential**.
@@ -18,7 +18,7 @@ This project answers three key questions about the Hungarian Data Engineering jo
 
 This project analyzes a data warehouse built using a star schema design. The warehouse structure consists of:
 
-![alt text](image-1.png)
+![alt text](Resources/image-1.png)
 
 ### Key findings
 
