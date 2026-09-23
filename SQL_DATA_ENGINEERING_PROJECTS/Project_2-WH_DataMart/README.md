@@ -2,7 +2,7 @@
 
 An end-to-end data engineering pipeline that transforms raw CSV files from Google Cloud Storage into a robust, normalized star schema data warehouse, powering specialized analytical data marts.
 
-![Data Pipeline Architecture](image.png)
+![Data Pipeline Architecture](Resources/image.png)
 
 ---
 
@@ -80,7 +80,7 @@ The pipeline orchestrates the flow of job postings from Google Cloud Storage int
 
 ### 1. Core Data Warehouse
 Serves as the normalized single source of truth for all enterprise analytical queries.
-![Data Warehouse](image-1.png)
+![Data Warehouse](Resources/image-1.png)
 
 * **Execution:** `01_create_tables_dw.sql` & `02_load_schema_dw.sql`
 * **Design:** Star schema featuring `job_postings_fact`, `company_dim`, `skills_dim`, and `skills_job_dim`.
@@ -88,7 +88,7 @@ Serves as the normalized single source of truth for all enterprise analytical qu
 
 ### 2. Flat Mart
 A wide, fully denormalized table designed for rapid, flexible ad-hoc querying by end-users.
-![Flat Mart](image-2.png)
+![Flat Mart](Resources/image-2.png)
 
 * **Execution:** `03_create_flat_mart.sql`
 * **Design:** All dimensions pre-joined to the fact table.
@@ -96,7 +96,7 @@ A wide, fully denormalized table designed for rapid, flexible ad-hoc querying by
 
 ### 3. Skills Mart
 Optimized for time-series analysis to track fluctuating skill demands in the market.
-![Skills Mart](image-3.png)
+![Skills Mart](Resources/image-3.png)
 
 * **Execution:** `04_create_skills_mart.sql`
 * **Design:** Aggregated time-series data featuring purely additive measures (counts/sums) for safe downstream roll-ups.
@@ -104,7 +104,7 @@ Optimized for time-series analysis to track fluctuating skill demands in the mar
 
 ### 4. Priority Mart
 Tracks high-priority roles and jobs using advanced incremental update strategies.
-![Priority Mart](image-4.png)
+![Priority Mart](Resources/image-4.png)
 
 * **Execution:** `05_create_priority_mart.sql` & `06_update_priority_mart.sql`
 * **Design:** Implements production-ready upsert patterns (`INSERT`, `UPDATE`, `DELETE`).
